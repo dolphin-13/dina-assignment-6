@@ -16,30 +16,29 @@ public class TeslaDataAnalysis {
 		return entrySet;
 	}
 	
-	public long getSumOfSalesByYear(Set<Entry<String, List<TeslaInfo>>> entrySet, String year) {	
-        return entrySet.stream()
-        		       .filter(entry -> entry.getKey().equals(year)) 	               
-		               .flatMap(entry -> entry.getValue().stream())
-		               .mapToInt(tesla -> tesla.getSales().intValue())		              
-		               .sum();		               		              
-	}
-	
-	public int getMaxOfSalesByYear(Set<Entry<String, List<TeslaInfo>>> entrySet, String year) {
-		return entrySet.stream()
-	                   .filter(entry -> entry.getKey().equals(year))
-	                   .flatMap(entry -> entry.getValue().stream())
-	                   .mapToInt(tesla -> tesla.getSales().intValue())
-	                   .summaryStatistics().getMax();
-	}
-	
-	public int getMinOfSalesByYear(Set<Entry<String, List<TeslaInfo>>> entrySet, String year) {
-		return entrySet.stream()
-	                   .filter(entry -> entry.getKey().equals(year))
-	                   .flatMap(entry -> entry.getValue().stream())
-	                   .mapToInt(tesla -> tesla.getSales().intValue())
-	                   .summaryStatistics().getMin();
-	}
-	
-	
+//	public long getSumOfSalesByYear(Set<Entry<String, List<TeslaInfo>>> entrySet, String year) {	
+//        return entrySet.stream()
+//        		       .filter(entry -> entry.getKey().equals(year)) 	               
+//		               .flatMap(entry -> entry.getValue().stream())
+//		               .mapToInt(tesla -> tesla.getSales().intValue())		              
+//		               .sum();	               
+//		              
+//	}
+//	
+//	public int getMaxOfSalesByYear(Set<Entry<String, List<TeslaInfo>>> entrySet, String year) {
+//		return entrySet.stream()
+//	                   .filter(entry -> entry.getKey().equals(year))
+//	                   .flatMap(entry -> entry.getValue().stream())
+//	                   .mapToInt(tesla -> tesla.getSales().intValue())
+//	                   .summaryStatistics().getMax();
+//	}
+//	
+//	public int getMinOfSalesByYear(Set<Entry<String, List<TeslaInfo>>> entrySet, String year) {
+//		return entrySet.stream()
+//	                   .filter(entry -> entry.getKey().equals(year))
+//	                   .flatMap(entry -> entry.getValue().stream())
+//	                   .mapToInt(tesla -> tesla.getSales().intValue())
+//	                   .summaryStatistics().getMin();
+//	}	
 
 }
